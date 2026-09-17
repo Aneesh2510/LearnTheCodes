@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-100;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-white;
+  }
+
+  h1 { @apply tracking-tighter; }
+  h2 { letter-spacing: -0.035em; }
+  h3 { letter-spacing: -0.025em; }
+
+  code, pre {
+    @apply font-mono;
+    line-height: 1.5;
+  }
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full border-2 border-background;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+  
+  .modern-card {
+    @apply bg-surface border border-slate-700/50 transition-all duration-300;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  .modern-button {
+    @apply flex items-center justify-center font-semibold transition-all duration-300 bg-surface border border-slate-700 hover:bg-surfaceHover hover:border-slate-600 active:scale-95 text-slate-100 rounded-2xl;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .brand-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-rose-500;
+  }
+  
+  .brand-gradient-bg {
+    @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-rose-500;
+  }
+
+  .glass-panel {
+    @apply bg-surface/70 backdrop-blur-3xl border border-slate-700/50;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
+  }
+}
