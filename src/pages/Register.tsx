@@ -1,8 +1,10 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, CheckCircle2, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Eye, EyeOff, CheckCircle2, ChevronRight, AlertCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { authService } from '../services/authService';
+import { getLessonRoute } from '../services/routeService';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -12,6 +14,7 @@ const Register = () => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const validate = () => {
     const newErrors = {};
@@ -38,27 +41,42 @@ const Register = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate() || isLoading || isSuccess) return;
 
     setIsLoading(true);
+    setErrorMessage('');
     
-    // Connect to actual API in future. Simulating network request for UX.
+    const result = await authService.signUp(formData.email, formData.password, formData.name);
+
+    setIsLoading(false);
+
+    if (result.error) {
+      setErrorMessage(result.error.message);
+      return;
+    }
+
+    setIsSuccess(true);
+    
+    // Redirect to first lesson after success animation
     setTimeout(() => {
-      setIsLoading(false);
-      setIsSuccess(true);
-      
-      // Redirect after success animation
-      setTimeout(() => {
-        navigate('/dashboard');
-      }, 1500);
-    }, 1200);
+      navigate(getLessonRoute('stage-01', 'lesson-01'));
+    }, 1500);
   };
 
-  const handleGoogleAuth = () => {
-    // Placeholder for Firebase Google Login
-    console.log("Initiating Firebase Google Auth...");
+  const handleGoogleAuth = async () => {
+    const result = await authService.signInWithGoogle();
+    
+    if (result.error) {
+      setErrorMessage(result.error.message);
+      return;
+    }
+
+    setIsSuccess(true);
+    setTimeout(() => {
+      navigate(getLessonRoute('stage-01', 'lesson-01'));
+    }, 1500);
   };
 
   return (
@@ -93,9 +111,25 @@ const Register = () => {
                   <p className="text-sm text-slate-400">Start your journey with LearnTheCodes.</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-                  
-                  {/* Username */}
+<form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                    
+                    {/* Error State Banner */}
+                    <AnimatePresence>
+                      {errorMessage && (
+                        <motion.div 
+                          initial={{ opacity: 0, height: 0, marginBottom: 0 }}
+                          animate={{ opacity: 1, height: 'auto', marginBottom: 16 }}
+                          exit={{ opacity: 0, height: 0, marginBottom: 0 }}
+                          className="bg-rose-500/10 border border-rose-500/20 rounded-xl p-3 flex items-start gap-3 overflow-hidden"
+                          aria-live="polite"
+                        >
+                          <AlertCircle className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />
+                          <p className="text-sm text-rose-300 font-medium">{errorMessage}</p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* Username */}
                   <div className="space-y-2">
                     <label htmlFor="username" className="block text-sm font-semibold text-slate-300">
                       Username

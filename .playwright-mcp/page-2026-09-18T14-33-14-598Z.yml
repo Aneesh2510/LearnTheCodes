@@ -1,0 +1,53 @@
+- generic [ref=f23e6]:
+  - navigation [ref=f23e7]:
+    - link "LEARNTHECODES" [ref=f23e8] [cursor=pointer]:
+      - /url: /
+  - main [ref=f23e10]:
+    - generic [ref=f23e14]:
+      - generic [ref=f23e15]:
+        - heading "Create your account" [level=2] [ref=f23e16]
+        - paragraph [ref=f23e17]: Start your journey with LearnTheCodes.
+      - generic [ref=f23e18]:
+        - generic [ref=f23e19]:
+          - generic [ref=f23e20]: Username
+          - textbox "Username" [ref=f23e21]:
+            - /placeholder: choose_a_username
+        - generic [ref=f23e22]:
+          - generic [ref=f23e23]: Full name
+          - textbox "Full name" [ref=f23e24]:
+            - /placeholder: Your name
+        - generic [ref=f23e25]:
+          - generic [ref=f23e26]: Email
+          - textbox "Email" [ref=f23e27]:
+            - /placeholder: you@example.com
+        - generic [ref=f23e28]:
+          - generic [ref=f23e29]: Password
+          - generic [ref=f23e30]:
+            - textbox "Password" [ref=f23e31]:
+              - /placeholder: Create a password
+            - button "Show password" [ref=f23e32] [cursor=pointer]
+        - generic [ref=f23e36]:
+          - generic [ref=f23e37]: Confirm Password
+          - generic [ref=f23e38]:
+            - textbox "Confirm Password" [ref=f23e39]:
+              - /placeholder: Confirm your password
+            - button "Show password" [ref=f23e40] [cursor=pointer]
+        - button "Create account" [ref=f23e45] [cursor=pointer]
+      - generic [ref=f23e49]: OR
+      - button "Sign up with Google" [ref=f23e53] [cursor=pointer]
+      - generic [ref=f23e59]:
+        - text: Already have an account?
+        - link "Sign in" [ref=f23e60] [cursor=pointer]:
+          - /url: /login
+  - contentinfo [ref=f23e61]:
+    - generic [ref=f23e63]:
+      - generic [ref=f23e64]:
+        - generic [ref=f23e65]: LEARNTHECODES
+        - generic [ref=f23e66]: — Learn Through Iteration
+      - generic [ref=f23e67]:
+        - link "Terms" [ref=f23e68] [cursor=pointer]:
+          - /url: "#"
+        - link "Privacy" [ref=f23e69] [cursor=pointer]:
+          - /url: "#"
+        - link "GitHub" [ref=f23e70] [cursor=pointer]:
+          - /url: "#"

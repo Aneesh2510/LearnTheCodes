@@ -1,0 +1,59 @@
+- generic [ref=f19e6]:
+  - navigation [ref=f19e7]:
+    - link "LEARNTHECODES" [ref=f19e8] [cursor=pointer]:
+      - /url: /
+  - main [ref=f19e10]:
+    - generic [ref=f19e14]:
+      - generic [ref=f19e15]:
+        - heading "Create your account" [level=2] [ref=f19e16]
+        - paragraph [ref=f19e17]: Start your journey with LearnTheCodes.
+      - generic [ref=f19e18]:
+        - paragraph [ref=f19e74]: Failed to fetch
+        - generic [ref=f19e19]:
+          - generic [ref=f19e20]: Username
+          - textbox "Username" [ref=f19e21]:
+            - /placeholder: choose_a_username
+            - text: testuser
+        - generic [ref=f19e22]:
+          - generic [ref=f19e23]: Full name
+          - textbox "Full name" [ref=f19e24]:
+            - /placeholder: Your name
+            - text: Test User
+        - generic [ref=f19e25]:
+          - generic [ref=f19e26]: Email
+          - textbox "Email" [ref=f19e27]:
+            - /placeholder: you@example.com
+            - text: test@example.com
+        - generic [ref=f19e28]:
+          - generic [ref=f19e29]: Password
+          - generic [ref=f19e30]:
+            - textbox "Password" [ref=f19e31]:
+              - /placeholder: Create a password
+              - text: password123
+            - button "Show password" [ref=f19e32] [cursor=pointer]
+        - generic [ref=f19e36]:
+          - generic [ref=f19e37]: Confirm Password
+          - generic [ref=f19e38]:
+            - textbox "Confirm Password" [ref=f19e39]:
+              - /placeholder: Confirm your password
+              - text: password123
+            - button "Show password" [ref=f19e40] [cursor=pointer]
+        - button "Create account" [ref=f19e45] [cursor=pointer]
+      - generic [ref=f19e49]: OR
+      - button "Sign up with Google" [ref=f19e53] [cursor=pointer]
+      - generic [ref=f19e59]:
+        - text: Already have an account?
+        - link "Sign in" [ref=f19e60] [cursor=pointer]:
+          - /url: /login
+  - contentinfo [ref=f19e61]:
+    - generic [ref=f19e63]:
+      - generic [ref=f19e64]:
+        - generic [ref=f19e65]: LEARNTHECODES
+        - generic [ref=f19e66]: — Learn Through Iteration
+      - generic [ref=f19e67]:
+        - link "Terms" [ref=f19e68] [cursor=pointer]:
+          - /url: "#"
+        - link "Privacy" [ref=f19e69] [cursor=pointer]:
+          - /url: "#"
+        - link "GitHub" [ref=f19e70] [cursor=pointer]:
+          - /url: "#"

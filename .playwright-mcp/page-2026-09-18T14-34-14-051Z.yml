@@ -1,0 +1,86 @@
+- generic [ref=f23e79]:
+  - generic:
+    - generic:
+      - navigation [ref=f23e80]:
+        - link "LEARNTHECODES" [ref=f23e81] [cursor=pointer]:
+          - /url: /
+      - button "User Menu" [ref=f23e85] [cursor=pointer]
+  - main [ref=f23e90]:
+    - generic [ref=f23e91]:
+      - generic [ref=f23e93]:
+        - generic [ref=f23e94]:
+          - link "Return to Path" [ref=f23e95] [cursor=pointer]:
+            - /url: /learn/python/stage/stage-01
+          - generic [ref=f23e98]: What is Programming?
+        - heading "What is Programming?" [level=1] [ref=f23e99]
+        - generic [ref=f23e100]:
+          - generic [ref=f23e101]:
+            - generic [ref=f23e102]: "01"
+            - heading "What is Programming?" [level=2] [ref=f23e104]
+          - generic [ref=f23e105]:
+            - paragraph [ref=f23e106]: Computers are incredibly fast and obedient, but they are completely literal. They have no intuition or common sense. If you tell a computer to 'make a sandwich', it doesn't know what bread is, what a knife is, or what spreading means.
+            - paragraph [ref=f23e107]:
+              - strong [ref=f23e108]: Programming
+              - text: is the act of breaking down a large task into tiny, precise instructions that a computer can understand.
+        - generic [ref=f23e109]:
+          - generic [ref=f23e110]:
+            - generic [ref=f23e111]: "02"
+            - heading "Why Does It Exist?" [level=2] [ref=f23e113]
+          - paragraph [ref=f23e115]: Before programming languages, humans had to physically change switches or plug cables to make computers do math. Programming exists so we can write instructions as text, and have a machine automatically translate those instructions into electrical signals.
+        - generic [ref=f23e116]:
+          - generic [ref=f23e117]:
+            - generic [ref=f23e118]: "03"
+            - 'heading "Mental Model: Input → Process → Output" [level=2] [ref=f23e120]'
+          - generic [ref=f23e121]:
+            - paragraph [ref=f23e122]: "Almost every program follows a simple model:"
+            - paragraph [ref=f23e123]:
+              - text: "1."
+              - strong [ref=f23e124]: "Input:"
+              - text: Information goes in. 2.
+              - strong [ref=f23e125]: "Process:"
+              - text: The computer does something with it. 3.
+              - strong [ref=f23e126]: "Output:"
+              - text: A result comes out.
+            - paragraph [ref=f23e127]:
+              - text: Think of a toaster. The
+              - strong [ref=f23e128]: Input
+              - text: is bread. The
+              - strong [ref=f23e129]: Process
+              - text: is heating. The
+              - strong [ref=f23e130]: Output
+              - text: is toast. Your code defines the *Process*.
+      - generic [ref=f23e133]:
+        - heading "Mission Objective" [level=2] [ref=f23e134]
+        - paragraph [ref=f23e135]: Let's test your mental model. Imagine you are programming a basic 'Coffee Machine' program. Match the concepts to the correct part of the Input → Process → Output model.
+        - generic [ref=f23e136]:
+          - generic [ref=f23e137]:
+            - heading "The user pressing the 'Espresso' button" [level=3] [ref=f23e138]
+            - generic [ref=f23e139]:
+              - button "Input" [ref=f23e140] [cursor=pointer]
+              - button "Process" [ref=f23e141] [cursor=pointer]
+              - button "Output" [ref=f23e142] [cursor=pointer]
+          - generic [ref=f23e143]:
+            - heading "Grinding the beans and boiling the water" [level=3] [ref=f23e144]
+            - generic [ref=f23e145]:
+              - button "Input" [ref=f23e146] [cursor=pointer]
+              - button "Process" [ref=f23e147] [cursor=pointer]
+              - button "Output" [ref=f23e148] [cursor=pointer]
+          - generic [ref=f23e149]:
+            - heading "The hot cup of coffee" [level=3] [ref=f23e150]
+            - generic [ref=f23e151]:
+              - button "Input" [ref=f23e152] [cursor=pointer]
+              - button "Process" [ref=f23e153] [cursor=pointer]
+              - button "Output" [ref=f23e154] [cursor=pointer]
+        - button "Verify Answers" [disabled] [ref=f23e156]
+  - contentinfo [ref=f23e157]:
+    - generic [ref=f23e159]:
+      - generic [ref=f23e160]:
+        - generic [ref=f23e161]: LEARNTHECODES
+        - generic [ref=f23e162]: — Learn Through Iteration
+      - generic [ref=f23e163]:
+        - link "Terms" [ref=f23e164] [cursor=pointer]:
+          - /url: "#"
+        - link "Privacy" [ref=f23e165] [cursor=pointer]:
+          - /url: "#"
+        - link "GitHub" [ref=f23e166] [cursor=pointer]:
+          - /url: "#"

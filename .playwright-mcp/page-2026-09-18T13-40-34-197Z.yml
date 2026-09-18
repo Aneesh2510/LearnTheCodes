@@ -1,0 +1,30 @@
+- generic [ref=f5e6]:
+  - generic:
+    - generic:
+      - navigation [ref=f5e7]:
+        - link "LEARNTHECODES" [ref=f5e8] [cursor=pointer]:
+          - /url: /
+      - generic [ref=f5e10]:
+        - link "Login" [ref=f5e11] [cursor=pointer]:
+          - /url: /login
+        - link [ref=f5e12] [cursor=pointer]:
+          - /url: /register
+          - button "Sign Up" [ref=f5e13]
+  - main [ref=f5e15]:
+    - generic [ref=f5e19]:
+      - heading "Invalid or expired link" [level=2] [ref=f5e23]
+      - paragraph [ref=f5e24]: This password reset link is invalid or has expired. Please request a new one.
+      - link "Request new link" [ref=f5e25] [cursor=pointer]:
+        - /url: /forgot-password
+  - contentinfo [ref=f5e29]:
+    - generic [ref=f5e31]:
+      - generic [ref=f5e32]:
+        - generic [ref=f5e33]: LEARNTHECODES
+        - generic [ref=f5e34]: — Learn Through Iteration
+      - generic [ref=f5e35]:
+        - link "Terms" [ref=f5e36] [cursor=pointer]:
+          - /url: "#"
+        - link "Privacy" [ref=f5e37] [cursor=pointer]:
+          - /url: "#"
+        - link "GitHub" [ref=f5e38] [cursor=pointer]:
+          - /url: "#"

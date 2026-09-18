@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, CheckCircle2, ChevronRight, AlertCircle, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { authService } from '../services/authService';
+import { getLessonRoute } from '../services/routeService';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,44 +31,46 @@ const Login = () => {
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (status === 'loading_email' || status === 'loading_google' || status === 'success') return;
     if (!validate()) return;
 
     setStatus('loading_email');
-    
-    // Connect to actual API in future. Simulating network request for UX.
-    setTimeout(() => {
-      // Simulate a random error for demonstration if password is 'error'
-      if (formData.password === 'error') {
-        setStatus('error');
-        setErrorMessage('Your email or password is incorrect.');
-        return;
-      }
+    setErrorMessage('');
 
-      setStatus('success');
-      
-      // Redirect after success animation
-      setTimeout(() => {
-        navigate('/dashboard');
-      }, 1500);
+    const result = await authService.signIn(formData.email, formData.password);
+
+    if (result.error) {
+      setStatus('error');
+      setErrorMessage(result.error.message);
+      return;
+    }
+
+    setStatus('success');
+    
+    // Redirect to first lesson after success animation
+    setTimeout(() => {
+      navigate(getLessonRoute('stage-01', 'lesson-01'));
     }, 1500);
   };
 
-  const handleGoogleAuth = () => {
+  const handleGoogleAuth = async () => {
     if (status === 'loading_email' || status === 'loading_google' || status === 'success') return;
     setStatus('loading_google');
     setErrorMessage('');
 
-    // Placeholder for Firebase Google Login
-    console.log("Initiating Firebase Google Auth...");
-    
+    const result = await authService.signInWithGoogle();
+
+    if (result.error) {
+      setStatus('error');
+      setErrorMessage(result.error.message);
+      return;
+    }
+
+    setStatus('success');
     setTimeout(() => {
-      setStatus('success');
-      setTimeout(() => {
-        navigate('/dashboard');
-      }, 1500);
+      navigate(getLessonRoute('stage-01', 'lesson-01'));
     }, 1500);
   };
 

@@ -1,0 +1,20 @@
+- generic [ref=f23e6]:
+  - navigation [ref=f23e7]:
+    - link "LEARNTHECODES" [ref=f23e8] [cursor=pointer]:
+      - /url: /
+  - main [ref=f23e10]:
+    - generic [ref=f23e71]:
+      - heading "You're ready." [level=2] [ref=f23e76]
+      - paragraph [ref=f23e77]: Your LearnTheCodes journey starts now.
+  - contentinfo [ref=f23e61]:
+    - generic [ref=f23e63]:
+      - generic [ref=f23e64]:
+        - generic [ref=f23e65]: LEARNTHECODES
+        - generic [ref=f23e66]: — Learn Through Iteration
+      - generic [ref=f23e67]:
+        - link "Terms" [ref=f23e68] [cursor=pointer]:
+          - /url: "#"
+        - link "Privacy" [ref=f23e69] [cursor=pointer]:
+          - /url: "#"
+        - link "GitHub" [ref=f23e70] [cursor=pointer]:
+          - /url: "#"

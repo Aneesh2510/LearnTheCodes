@@ -4,7 +4,7 @@ export type AuthUser = User;
 export type AuthSession = Session;
 
 export interface AuthError { message: string; }
-export interface AuthResult { error: AuthError | null; }
+export interface AuthResult { error: AuthError | null; sessionExists?: boolean; }
 export interface Profile {
   id: string;
   user_id: string;

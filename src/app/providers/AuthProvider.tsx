@@ -11,6 +11,7 @@ interface AuthContextValue {
   signOut: () => ReturnType<typeof authService.signOut>;
   signInWithGoogle: () => ReturnType<typeof authService.signInWithGoogle>;
   resetPassword: (email: string) => ReturnType<typeof authService.resetPassword>;
+  updatePassword: (password: string) => ReturnType<typeof authService.updatePassword>;
 }
 const AuthContext = createContext<AuthContextValue | null>(null);
 
@@ -20,10 +21,10 @@ export function AuthProvider({ children }: { children: ReactNode }): JSX.Element
   useEffect(() => {
     let active = true;
     authService.getSession().then(({ data }) => { if (active) { setSession(data.session); setLoading(false); } });
-    const { data: { subscription } } = authService.onAuthStateChange((_event, nextSession) => { setSession(nextSession); setLoading(false); });
+    const { data: { subscription } } = authService.onAuthStateChange(async (_event, nextSession) => { setSession(nextSession); setLoading(false); });
     return () => { active = false; subscription.unsubscribe(); };
   }, []);
-  const value = useMemo(() => ({ user: session?.user ?? null, session, loading, signIn: authService.signIn, signUp: authService.signUp, signOut: authService.signOut, signInWithGoogle: authService.signInWithGoogle, resetPassword: authService.resetPassword }), [loading, session]);
+  const value = useMemo(() => ({ user: session?.user ?? null, session, loading, signIn: authService.signIn, signUp: authService.signUp, signOut: authService.signOut, signInWithGoogle: authService.signInWithGoogle, resetPassword: authService.resetPassword, updatePassword: authService.updatePassword }), [loading, session]);
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

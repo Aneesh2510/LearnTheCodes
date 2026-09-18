@@ -2,11 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 
 const url = import.meta.env.VITE_SUPABASE_URL;
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const isDemoMode = !url || !anonKey || url.includes('dummy');
 
-if (!url || !anonKey) {
-  throw new Error('Supabase is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
-}
-
-export const supabase = createClient(url, anonKey, {
-  auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
-});
+export const supabase = isDemoMode
+  ? createClient('https://demo.supabase.co', 'demo-key', { auth: { persistSession: false } })
+  : createClient(url, anonKey, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
